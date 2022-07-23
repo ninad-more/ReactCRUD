@@ -1,5 +1,0 @@
-var Linkbar = () => {
-
-}
-
-export default Linkbar;
