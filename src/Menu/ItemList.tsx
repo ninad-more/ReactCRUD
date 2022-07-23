@@ -1,23 +1,24 @@
 import FoodItem from "./FoodItem";
 import { FoodItemDto } from "./FoodItem.model";
 import "./FoodItem.css";
+import ListComponent from "./ListComponent";
 import Loading from "./Loading";
 import Error from "./Error";
 
 var ItemList = (props: itemListDto) => {
-  if (!props.FoodItems) {
-    return <Loading />;
-  } else if (props.FoodItems) {
-    return (
+  return (
+    <ListComponent
+      list={props.FoodItems}
+      loadingUI={<Loading />}
+      errorUI={<Error />}
+    >
       <div className="items">
-        {props.FoodItems.map((item) => (
+        {props.FoodItems?.map((item) => (
           <FoodItem {...item} key={item.id} />
         ))}
       </div>
-    );
-  } else {
-    return <Error />;
-  }
+    </ListComponent>
+  );
 };
 
 export default ItemList;
