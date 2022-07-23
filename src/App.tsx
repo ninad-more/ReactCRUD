@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { FoodItemDto, LandingPageDto } from "./Menu/FoodItem.model";
-import ItemList from "./Menu/ItemList";
+import { FoodItemDto, LandingPageDto } from "./MenuCard/FoodItem.model";
+import ItemList from "./MenuCard/ItemList";
 
 let App = () => {
   const [foodItems, setFoodItems] = useState<LandingPageDto>({});
@@ -46,7 +46,7 @@ let App = () => {
   });
 
   return (
-    <div>
+    <div className="container">
       <h3>Burgers : </h3>
       <ItemList FoodItems={foodItems.burgerItems} />
 
