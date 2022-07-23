@@ -1,11 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FoodItem from './Menu/FoodItem';
+import {FoodItemDto} from './Menu/FoodItem.model'
 
-function App() {
+let App = () => {
+
+  const foodItem: FoodItemDto = {
+    id:1,
+    name: 'Burger',
+    poster: 'https://foodish-api.herokuapp.com/images/burger/burger46.jpg'
+  }
+
+
   return (
     <div>
-      Hello Ninad!
+      <FoodItem {...foodItem}/>
     </div>
   );
 }
