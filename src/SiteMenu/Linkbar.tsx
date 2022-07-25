@@ -22,6 +22,16 @@ var Linkbar = () => {
                 Non-Veg
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/create">
+                Add Menu Item
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/edit/:id">
+                Edit Menu Item
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

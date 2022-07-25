@@ -11,14 +11,14 @@ var Home = () => {
         burgerItems: [
           {
             id: 1,
-            name: "Burger 1",
+            name: "Veg Burger",
             poster:
               "https://foodish-api.herokuapp.com/images/burger/burger46.jpg",
           },
 
           {
             id: 2,
-            name: "Burger 2",
+            name: "Non-Veg Burger",
             poster:
               "https://foodish-api.herokuapp.com/images/burger/burger26.jpg",
           },
@@ -26,14 +26,14 @@ var Home = () => {
         pastaItems: [
           {
             id: 3,
-            name: "Pasta 1",
+            name: "Veg Pasta",
             poster:
               "https://foodish-api.herokuapp.com/images/pasta/pasta27.jpg",
           },
 
           {
             id: 4,
-            name: "Pasta 2",
+            name: "Non-Veg Pasta",
             poster:
               "https://foodish-api.herokuapp.com/images/pasta/pasta24.jpg",
           },
