@@ -14,8 +14,10 @@ interface ButtonDto {
   children: React.ReactNode;
   onClick?(): void;
   type: "button" | "submit";
+  disabled: boolean;
 }
 
 Button.defaultProps = {
   type: "button",
+  disabled: false,
 };

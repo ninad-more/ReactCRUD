@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../Utils/Button";
 import * as Yup from "yup";
+import TextField from "../Utils/TextField";
 
 var AddMenuItem = () => {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ var AddMenuItem = () => {
       <Formik
         initialValues={{ name: "", poster: "" }}
         onSubmit={(value) => {
+          //api call
+
           console.log(value);
         }}
         validationSchema={Yup.object({
@@ -19,27 +22,20 @@ var AddMenuItem = () => {
           poster: Yup.string().required("Poster is mandetory"),
         })}
       >
-        <Form>
-          <div className="mb-3">
-            <label htmlFor="name">Name</label>
-            <Field id="name" name="name" className="form-control" />
-            <ErrorMessage name="name">
-              {(msg) => <div className="alert alert-danger">{msg}</div>}
-            </ErrorMessage>
-          </div>
+        {(formikProps) => (
+          <Form>
+            <TextField field="name" displayName="Name"></TextField>
 
-          <div className="mb-3">
-            <label htmlFor="poster">Image Link</label>
-            <Field id="poster" name="poster" className="form-control" />
-            <ErrorMessage name="poster">
-              {(msg) => <div className="alert alert-danger">{msg}</div>}
-            </ErrorMessage>
-          </div>
-          <Button type="submit">Add</Button>
-          <Link className="btn btn-secondary" to="/">
-            Cancel
-          </Link>
-        </Form>
+            <TextField field="poster" displayName="Image"></TextField>
+
+            <Button disabled={formikProps.isSubmitting} type="submit">
+              Add
+            </Button>
+            <Link className="btn btn-secondary" to="/">
+              Cancel
+            </Link>
+          </Form>
+        )}
       </Formik>
     </>
   );
